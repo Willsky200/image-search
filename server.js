@@ -123,7 +123,20 @@ app.get("/api/imagesearch/:search", (req, res) => {
 	});
 });
 
+app.get("/api/latest/imagesearch", (req, res) => {
+	Search.find({}, {"_id": 0, "term": 1, "when": 1, "api": 1}).sort("-when").exec(function(err, docs){
+		if(err){
+			return res.send(err);
+		}
+		var resultsArr = []
 
+		for(var i = 0; i < 10; i++){
+			resultsArr.push(docs[i]);	
+		}
+
+		res.json(resultsArr);
+	});
+});
 
 
 

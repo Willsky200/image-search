@@ -8,7 +8,20 @@
 	
 	<h1>Image Search Basejump</h1>
 
-	
+	<h3>This microservice allows you to search for images on either imgur or google. For imgur it returns and array of JSON objects for each image and for google it returns JSON objects containing the image url, the context url, the thumbnail and the alt text. </h3>
+
+	<h4>Imgur</h4>
+	<p>Use the url parameters /api/imgursearch/MY_SEARCH. For example
+	/api/imgursearch/penguins.</p>
+	<p>Add the query ?offset=N where N is an integer greater than 0, to define the position of the first image to be returned. 10 images will be returned, beginning at the offset value</p>
+
+	<h4>Google</h4>
+	<p>Use the url parameters /api/imagesearch/MY_SEARCH. For example
+	/api/imagesearch/penguins.</p>
+	<p>Add the query ?offset=N where N is an integer greater than 0, to define the position of the first image to be returned. 10 images will be returned, beginning at the offset value</p>
+
+	<h3>Latest Searches</h3>
+	<p>Go to the path /api/latest/imagesearch to see the 10 most recent searches.</p>
 
 </body>
 </html>
